@@ -1,0 +1,35 @@
+---
+import LinksButton from "./LinksButton.astro";
+import Hiring from "./HiringBadger.astro";
+import { Github, Linkedin } from "@lucide/astro";
+---
+
+<section class="min-h-screen flex items-center justify-center px-4">
+  <div class="container mx-auto text-center max-w-4xl">
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <h1 class="text-4xl md:text-6xl font-bold text-balance">
+          Alonso Diaz Ruben Lautaro
+        </h1>
+        <p class="text-xl text-accent">Desarrollador Full Stack</p>
+      </div>
+
+      <div class="flex items-center justify-center gap-4">
+        <LinksButton
+          customStyle="transition bg-esmerald flex gap-2 items-center justify-center"
+          link="https://github.com/lauta-dev"
+        >
+          GitHub
+        </LinksButton>
+
+        <LinksButton
+          customStyle="bg-transparent transition text-white hover:bg-accent hover:text-black flex gap-2 items-center justify-center"
+          link="https://github.com/lauta-dev"
+        >
+          Linkding</LinksButton
+        >
+      </div>
+      <Hiring />
+    </div>
+  </div>
+</section>

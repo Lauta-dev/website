@@ -1,0 +1,39 @@
+[
+    {
+        "category": "Frontend",
+        "skills": [
+            "HTML5",
+            "CSS3",
+            "React",
+            "TypeScript",
+            "JavaScript",
+            "Tailwind CSS",
+            "Vite"
+        ]
+    },
+    {
+        "category": "Backend",
+        "skills": [
+            "Node.js",
+            "Express.js",
+            "REST APIs"
+        ]
+    },
+    {
+        "category": "DevOps & Tools",
+        "skills": [
+            "Docker",
+            "Vercel",
+            "Git",
+            "GitHub Actions",
+            "Linux"
+        ]
+    },
+    {
+        "category": "Extras Languajes",
+        "skills": [
+            "Golang",
+            "Lua"
+        ]
+    }
+]

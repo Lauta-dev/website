@@ -1,0 +1,56 @@
+[
+    {
+        "title": "CSV Viewer",
+        "desc": "CSV Viewer es una aplicación web que permite a los usuarios cargar y visualizar archivos CSV directamente en su navegador. La aplicación está diseñada para ser rápida y fácil de usar, sin almacenar información del usuario ni cargar archivos a servidores externos.",
+        "stack": [
+            "HTML5",
+            "CSS3",
+            "React",
+            "Tailwind"
+        ],
+        "repo": "https://github.com/lauta-dev/csv-viewer",
+        "demo": "https://demo.com",
+        "img": "csv-viewer.webp"
+    },
+    {
+        "title": "Short URL",
+        "desc": "Acorta y gestiona tus enlaces con una interfaz moderna hecha en React + Shadcn. Las URLs se almacenan de forma segura en SQLite, con soporte para autenticación de usuarios. Administra, organiza y controla tus enlaces fácilmente desde un solo lugar.",
+        "stack": [
+            "HTML5",
+            "CSS3",
+            "React",
+            "Tailwind",
+            "SQLite",
+            "ExpressJS/NodeJS"
+        ],
+        "repo": "https://github.com/lauta-dev/short-url",
+        "demo": "https://demo.com",
+        "img": "short-url.webp"
+
+    },
+    {
+        "title": "Website Screenshot Capture",
+        "desc": "Automatiza la captura de pantallas de tus páginas web directamente desde GitHub Actions. Soporta carga desde archivos YAML o inputs directos, con opciones de tamaño, formato, calidad y scripts personalizados.",
+        "stack": [
+            "Github Actions",
+            "TypeScript",
+            "Puppeteer"
+        ],
+        "repo": "https://github.com/lauta-dev/website-screenshot-capture",
+        "demo": "",
+        "img": "gh-capture.webp"
+
+    },
+    {
+        "title": "HTTP TUI",
+        "desc": "Un cliente HTTP moderno con Interfaz de Usuario en Terminal (TUI) construido con Go. Realiza peticiones HTTP de forma visual e intuitiva desde la terminal.",
+        "stack": [
+            "Golang",
+            "Tview"
+        ],
+        "repo": "https://github.com/lauta-dev/httptui",
+        "demo": "",
+        "img": "http-tui.png"
+
+    }
+]

@@ -1,0 +1,12 @@
+---
+interface Props {
+  customStyles: string
+  
+}
+
+const { customStyles = "" } = Astro.props
+---
+
+<button class={`p-4 rounded ${customStyles}`}>
+  <slot />
+</button>

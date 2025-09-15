@@ -1,0 +1,15 @@
+---
+interface Props {
+  customStyle: string
+  link: string
+}
+
+const { customStyle, link } = Astro.props
+---
+
+
+<a 
+  class={`bg-accent text-black p-2 rounded ${customStyle} border-2 border-white/5`}
+  href={link} target="_blank" rel="noopener noreferrer">
+  <slot />
+</a>

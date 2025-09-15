@@ -1,0 +1,41 @@
+---
+import Button from "./Button.astro"
+import skillCategories from "../skill.json"
+ 
+---
+
+<section id="skills" class="py-20 px-4">
+    <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                Habilidades <b class="text-accent underline">Técnicas</b>
+            </h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-4"></div>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Tecnologías y herramientas que domino para crear soluciones
+                completas
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            {
+                skillCategories.map((category, index) => (
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-semibold text-primary mb-4">
+                            {category.category}
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            {category.skills.map((skill, skillIndex) => (
+                                <Button customStyles="bg-gray-600 text-sm py-2 px-3 hover:bg-accent hover:text-black transition-colors cursor-default">
+                                    {skill}
+                                </Button>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+
+    </div>
+</section>

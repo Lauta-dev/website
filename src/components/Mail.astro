@@ -1,0 +1,135 @@
+---
+import L from "./svg/loading.astro";
+---
+
+<div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold text-center text-accent"
+    >
+        Contactame
+    </h2>
+
+    <form
+        class="space-y-8 flex flex-col"
+        id="form"
+        enctype="application/x-www-form-urlencoded"
+    >
+        <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-white"
+                >Su nombre*</label
+            >
+            <input
+                type="text"
+                name="name"
+                id="name"
+                class="shadow-sm bg-transparent border border-white/15 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                placeholder="Lautaro Diaz"
+                required
+            />
+        </div>
+        <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-white"
+                >Su Mail*</label
+            >
+            <input
+                type="email"
+                name="email"
+                id="mail"
+                class="shadow-sm bg-transparent border border-white/15 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                placeholder="lautarocompany@gmail.com"
+                required
+            />
+        </div>
+        <div>
+            <label
+                for="subject"
+                class="block mb-2 text-sm font-medium text-white"
+                >Encabesado*</label
+            >
+            <input
+                type="text"
+                name="subject"
+                id="subject"
+                class="block p-3 w-full text-sm text-white bg-transparent rounded-lg border border-white/15 shadow-sm focus:ring-primary-500 focus:border-primary-500"
+                placeholder="OFERTA LABORAR - Frontend"
+                required
+            />
+        </div>
+        <div class="sm:col-span-2">
+            <label
+                for="message"
+                class="block mb-2 text-sm font-medium text-white"
+                >Su mensaje*</label
+            >
+            <textarea
+                name="message"
+                id="message"
+                rows="6"
+                class="block p-2.5 w-full text-sm text-white bg-transparent rounded-lg shadow-sm border border-white/15 focus:ring-primary-500 focus:border-primary-500"
+                placeholder="Deje su mensaje"></textarea>
+        </div>
+        <button
+            id="submit-button"
+            disabled={true}
+            class="transition flex items-center justify-center hover:bg-accent hover:text-black hover:border-transparent border-2 p-2 rounded border-white/15 cursor-pointer disabled:cursor-not-allowed disabled:bg-white/15 disabled:text-white"
+        >
+            <b>Enviar Correo</b>
+            <L className="loading animate-spin hidden text-center" />
+        </button>
+
+        <p class="text-red-500 hidden"></p>
+    </form>
+</div>
+
+<script>
+    const form = document.getElementById("form");
+    const loadingElement = document.getElementsByClassName("loading");
+
+    const submitButton = document.getElementById(
+        "submit-button",
+    ) as HTMLButtonElement;
+
+    const inputs = [
+        ...document.querySelectorAll("input"),
+        document.getElementById("message") as HTMLTextAreaElement,
+    ];
+
+    for (const input of inputs) {
+        if (input === null) {
+            break;
+        }
+
+        input.addEventListener("input", () => {
+            submitButton.disabled = !Array.from(inputs).every((i) => {
+                return i.value.trim() !== "";
+            });
+        });
+    }
+
+    form?.addEventListener("submit", async (event) => {
+        const bt = document.querySelector("#submit-button>b");
+        event.preventDefault();
+        const formData = new FormData(event.target as HTMLFormElement);
+        const api = "api/contact";
+        const el = loadingElement[0];
+        el.classList.remove("hidden");
+        bt?.classList.add("hidden");
+        submitButton.disabled = true;
+
+        try {
+            const f = await fetch(api, {
+                method: "post",
+                body: formData,
+            });
+            const j = await f.json();
+        } catch (error) {
+            el.classList.add("hidden");
+            submitButton.disabled = false;
+            bt?.classList.remove("hidden");
+        } finally {
+            el.classList.add("hidden");
+            submitButton.disabled = false;
+            bt?.classList.remove("hidden");
+        }
+    });
+</script>
