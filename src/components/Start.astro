@@ -1,7 +1,8 @@
 ---
 import LinksButton from "./LinksButton.astro";
 import Hiring from "./HiringBadger.astro";
-import { Github, Linkedin } from "@lucide/astro";
+import Linkein from "./svg/li.astro"
+import Gh from "./svg/GitHub.astro"
 ---
 
 <section class="min-h-screen flex items-center justify-center px-4">
@@ -19,14 +20,14 @@ import { Github, Linkedin } from "@lucide/astro";
           customStyle="transition bg-esmerald flex gap-2 items-center justify-center"
           link="https://github.com/lauta-dev"
         >
-          GitHub
+          <Gh /> GitHub
         </LinksButton>
 
         <LinksButton
           customStyle="bg-transparent transition text-white hover:bg-accent hover:text-black flex gap-2 items-center justify-center"
           link="https://github.com/lauta-dev"
         >
-          Linkding</LinksButton
+          <Linkein /> Linkding</LinksButton
         >
       </div>
       <Hiring />

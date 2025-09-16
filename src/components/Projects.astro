@@ -3,8 +3,8 @@ import projects from "../projects.json"
 
 import Badger from "./Badger.astro";
 import LinksButton from "./LinksButton.astro";
-import { ExternalLink, Github } from '@lucide/astro';
-
+import ExtLink from "./svg/ExternalLink.astro"
+import Gh from "./svg/GitHub.astro"
 ---
 
   <section id="projects" class="py-20 px-4 bg-muted/30">
@@ -52,6 +52,7 @@ import { ExternalLink, Github } from '@lucide/astro';
                   customStyle="flex flex-1  text-center transition gap-2 rounded-full text-white hover:bg-accent hover:text-black items-center justify-center"
                   link="https://github.com/lauta-dev"
                 >
+                  <Gh /> GitHub
                 </LinksButton>
 
                 {
@@ -60,7 +61,9 @@ import { ExternalLink, Github } from '@lucide/astro';
                         customStyle="flex flex-1 bg-transparent text-center transition gap-2 rounded-full text-white hover:bg-accent hover:text-black items-center justify-center"
                   link="https://github.com/lauta-dev"
                   
-                ></LinksButton>
+                >
+                  <ExtLink /> Demo
+                </LinksButton>
                 }
 
                 </div>
